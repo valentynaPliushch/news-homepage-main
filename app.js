@@ -1,10 +1,10 @@
-const burgerBtn = document.querySelector('#burgerButton');
-const burgerList = document.querySelector('.burger-list');
-const closeBruger = document.querySelector('#closeBurger');
+const burgerBtn = document.querySelector("#burgerButton");
+const navList = document.querySelector("#nav-list");
+const closeBruger = document.querySelector("#closeBurger");
 
-burgerBtn.addEventListener('click', ()=>{
-    burgerList.style.transform = "translateX(0)";
-})
-closeBruger.addEventListener('click', ()=>{
-    burgerList.style.transform = "translateX(100%)";
-})
+burgerBtn.addEventListener("click", () => {
+  navList.classList.add("active");
+});
+closeBruger.addEventListener("click", () => {
+  navList.classList.remove("active");
+});

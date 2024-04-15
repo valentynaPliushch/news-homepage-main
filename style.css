@@ -28,6 +28,7 @@ body {
 
 .container {
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     padding: 4rem 10rem;
     background-color: white;
@@ -58,6 +59,15 @@ nav {
 }
 .burger-img {
     display: none;
+    cursor: pointer;
+}
+
+.burger-list img {
+    width: 10%;
+    position: inherit;
+    top: 0;
+    right: 0;
+    margin: 3rem;
     cursor: pointer;
 }
 .header {
@@ -184,29 +194,7 @@ nav {
     line-height: 1.4;
 }
 
-.burger-list{
-    background-color: white;
-    width: 50%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 3rem;
-    font-weight: 600;
-    transform: translateX(100%);
-    transition: transform 1s;
-}
-.burger-list img {
-    width: 10%;
-    position: inherit;
-    top: 0;
-    right: 0;
-    margin: 3rem;
-    cursor: pointer;
-}
+
 
 @media screen and (max-width: 1430px) {
     .container {
@@ -225,14 +213,40 @@ font-size: 10px;
 } */
   @media screen and (max-width: 800px) {
     .container{
-        padding: 1.5em 1em;
+        padding: 0.5em;
         font-size: 2em;
-    }
-    .nav-list{
-        display: none;
+        overflow: hidden;
     }
     .burger-img{
         display: block;
+    }
+    .nav-list{
+        background-color: var(--softOrange);
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 3rem;
+        margin: 0;
+        font-weight: 600;
+        /* box-shadow: inset 1px 5px 10px rgba(0, 0, 0, 0.219); */
+        transform: translateX(100%);
+        transition: transform 1s;
+    }
+    .nav-list.active{
+        transform: translateX(0);
+    }
+    .nav-item{
+        color: white;
+    }
+    .closeBurgerBtn{
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
     }
     .header__firstNote{
         margin: 1em 0;
